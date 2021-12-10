@@ -26,4 +26,16 @@ func NewRouter() *mux.Router{
 }
 
 var routes = Routes{
-	Route{"index", "GET", "/", controllers.Index}}
+	Route{"index", "GET", "/", controllers.Index},
+	// Rutas consolas:
+	Route{"consolas", "GET", "/consolas", controllers.ConsolasList},
+	Route{"consola", "GET", "/consola/{id}", controllers.Consola},
+	Route{"consola", "POST", "/consola", controllers.ConsolaCreate},
+	Route{"consola", "PUT", "/consola/{id}", controllers.ConsolaUpdate},
+	Route{"consola", "DELETE", "/consola/{id}", controllers.ConsolaDelete},
+	// Rutas juegos:
+	Route{"juegos", "GET", "/juegos", controllers.JuegosList},
+	Route{"juego", "GET", "/juego/{id}", controllers.Juego},
+	Route{"juego", "POST", "/juego", controllers.JuegoCreate},
+	Route{"juego", "PUT", "/juego/{id}", controllers.JuegoUpdate},
+	Route{"juego", "DELETE", "/juego/{id}", controllers.JuegoDelete}}
